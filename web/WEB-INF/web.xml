@@ -4,9 +4,17 @@
         <servlet-name>Insert</servlet-name>
         <servlet-class>PracticaW.Insert</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Delete</servlet-name>
+        <servlet-class>PracticaW.Delete</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Insert</servlet-name>
         <url-pattern>/Insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete</servlet-name>
+        <url-pattern>/Delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

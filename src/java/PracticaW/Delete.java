@@ -6,19 +6,17 @@ package PracticaW;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import utilsT.SQL;
 
 /**
  *
  * @author Shiroi
  */
-public class Insert extends HttpServlet {
+public class Delete extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,31 +35,15 @@ public class Insert extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Insert</title>");            
+            out.println("<title>Servlet Delete</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Insert at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Delete at " + request.getContextPath() + "</h1>");
+            String name = request.getParameter("name");
+            SQL sql = new SQL(); // Se uso la libreria creada para crear el conector y ejectuar el comando
+            sql.exeUpdate("DELETE FROM users WHERE first_name='" + name + "'");
             out.println("</body>");
             out.println("</html>");
-            String name = request.getParameter("name");
-            String last = request.getParameter("last");
-            try {
-                // create a mysql database connection
-                String myDriver = "com.mysql.cj.jdbc.Driver";
-                String myUrl = "jdbc:mysql://localhost/practicas";
-                Class.forName(myDriver);
-                try (Connection conn = DriverManager.getConnection(myUrl, "root", "1234")) {
-                    Statement st = conn.createStatement();
-                    String qry = "INSERT INTO users (first_name, last_name) " + "VALUES ('" + name + "'," + "'" + last + "'" + ")";
-                    System.out.println(qry);
-                    // note that i'm leaving "date_created" out of this insert statement
-                    //st.executeUpdate(qry);
-                }
-            }
-            catch (Exception e){
-                System.err.println("Got an exception!");
-                System.err.println(e.getMessage());
-            }
         }
     }
 
