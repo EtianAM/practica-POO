@@ -3,30 +3,33 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
 -->
-<html lang="es">
+<html>
     <head>
-        <title>Borrar dispositivo</title>
+        <title>Agregar dispositivo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <div>Agregar dispositivo por:</div>
-        <form action="Delete" method="get">
-            <label>Nombre del dispositivo</label>
+        <div>Agregar dispositivo:</div>
+        <form action="Insert" method="get">
+            <label>Marca del dispositivo</label>
+            <br>
+            <input type="text" name="brand">
+            <br>
+            <label>Nombre del dispotivo</label>
             <br>
             <input type="text" name="name">
-            <input type="submit" value="submit">
-        </form>
-        <br>
-        <br>
-        <br>
-        <form action="Delete" method="get">
+            <br>
             <label>Nombre en clave del dispositivo</label>
             <br>
             <input type="text" name="codename">
+            <br>
+            <label>Imangen de referencia del dispositivo (Archivo o URL)</label>
+            <br>
+            <input type="text" name="img_ref">
+            <br>
             <input type="submit" value="submit">
         </form>
-        <script src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

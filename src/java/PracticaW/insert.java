@@ -16,7 +16,7 @@ import utilsT.SQL;
  *
  * @author Shiroi
  */
-public class Delete extends HttpServlet {
+public class Insert extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,19 +35,16 @@ public class Delete extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Delete</title>");            
+            out.println("<title>Servlet Insert</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Delete at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Insert at " + request.getContextPath() + "</h1>");
+            String brand = request.getParameter("brand");
             String name = request.getParameter("name");
             String codename = request.getParameter("codename");
+            String img_ref = request.getParameter("img_ref");
             SQL sql = new SQL("jdbc:mysql://localhost/practica_web", "root", "1234"); // Se uso la libreria creada para crear el conector y ejectuar el comando
-            if (name != null){
-                sql.exeUpdate("DELETE FROM phones WHERE name='" + name + "'");
-            }
-            if (codename != null){
-                sql.exeUpdate("DELETE FROM phones WHERE codename='" + codename + "'");
-            }
+            sql.exeUpdate("INSERT INTO phones (brand, name, codename, img_ref) " +"VALUES ('" + brand + "','" + name + "','" + codename + "','" + img_ref + "'" + ");");
             out.println("</body>");
             out.println("</html>");
         }
