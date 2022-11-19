@@ -5,18 +5,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Actualizar dispositivo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <div>TODO write content</div>
-        <form action="Insert" method="get">
-            <label>Nombre</label>
+        <h2>Actualizar dispositivo:</h2>
+        <form action="Update" method="get">
+            <label>Nombre en clave del dispositivo a modificar</label>
+            <br>
+            <input type="text" name="cons">
+            <br>
+            <br>
+            <br>
+            <label>Marca del dispositivo</label>
+            <br>
+            <input type="text" name="brand">
+            <br>
+            <label>Nombre del dispotivo</label>
+            <br>
             <input type="text" name="name">
-            <label>Apellido</label>
-            <input type="text" name="last">
-            <input type="submit" value="submit">
+            <br>
+            <label>Nombre en clave del dispositivo</label>
+            <br>
+            <input type="text" name="codename">
+            <br>
+            <label>Imangen de referencia del dispositivo (Archivo o URL)</label>
+            <br>
+            <input type="text" name="img_ref">
+            <br>
+            <input type="submit" value="Actualizar">
         </form>
+        <script src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

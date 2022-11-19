@@ -16,7 +16,7 @@ import utilsT.SQL;
  *
  * @author Shiroi
  */
-public class Delete extends HttpServlet {
+public class Update extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,19 +35,28 @@ public class Delete extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Delete</title>");
-            out.println("<meta http-equiv=\"refresh\" content=\"0; URL=\\PracticaWeb\\index.html\"/>");
+            out.println("<title>Servlet Update</title>");   
+            out.println("<meta http-equiv=\"refresh\" content=\"0; URL=\\PracticaWeb\\index.html\"/>");         
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Delete at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Update at " + request.getContextPath() + "</h1>");
+            String cons = request.getParameter("cons");
+            String brand = request.getParameter("brand");
             String name = request.getParameter("name");
             String codename = request.getParameter("codename");
+            String img_ref = request.getParameter("img_ref");
             SQL sql = new SQL("jdbc:mysql://localhost/practica_web", "root", "1234"); // Se uso la libreria creada para crear el conector y ejectuar el comando
-            if (name != null){
-                sql.exeUpdate("DELETE FROM phones WHERE name='" + name + "'");
+            if (brand != ""){
+                sql.exeUpdate("UPDATE phones SET brand='" + brand + "' WHERE codename='" + cons + "';");
             }
-            if (codename != null){
-                sql.exeUpdate("DELETE FROM phones WHERE codename='" + codename + "'");
+            if (name != ""){
+                sql.exeUpdate("UPDATE phones SET name='" + name + "' WHERE codename='" + cons + "';");
+            }
+            if (codename != ""){
+                sql.exeUpdate("UPDATE phones SET codename='" + codename + "' WHERE codename='" + cons + "';");
+            }
+            if (img_ref != ""){
+                sql.exeUpdate("UPDATE phones SET img_ref='" + img_ref + "' WHERE codename='" + cons + "';");
             }
             out.println("</body>");
             out.println("</html>");

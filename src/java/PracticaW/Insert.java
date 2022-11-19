@@ -35,7 +35,8 @@ public class Insert extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Insert</title>");            
+            out.println("<title>Servlet Insert</title>");
+            out.println("<meta http-equiv=\"refresh\" content=\"0; URL=\\PracticaWeb\\index.html\"/>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Insert at " + request.getContextPath() + "</h1>");
