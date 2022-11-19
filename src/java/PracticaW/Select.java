@@ -77,7 +77,7 @@ public class Select extends HttpServlet {
                 out.println("<br>");
                 out.println("Nombre en clave: " + codename);
                 out.println("<br>");
-                out.println("Imagen de referencia: " + img_ref);
+                out.println("Imagen de referencia: <img src=\"" + img_ref +"\">");
                 out.println("<br>");
                 out.println("</h3><h3><a href=\"Delete?name=" + name + "\">Eliminar</a></h3>");
                 out.println("<br>");
